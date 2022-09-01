@@ -1,12 +1,17 @@
 package com.ably.pre_task.service;
 
 
+import java.util.Optional;
+import javax.servlet.http.HttpSession;
+
 public interface LoginService {
 
-  void accountLogin(Long accountId);
+  void accountLogin(HttpSession session, Long accountId);
 
-  void accountLogout();
+  void accountLogout(HttpSession session);
 
-  boolean isLoginAccount();
+  boolean isLoginAccount(HttpSession session);
+
+  Optional<Long> getLoginAccountId(HttpSession session);
 
 }
