@@ -2,6 +2,7 @@ package com.ably.pre_task.controller;
 
 import com.ably.pre_task.aop.LoginCheck;
 import com.ably.pre_task.dto.request.AccountAddRequest;
+import com.ably.pre_task.dto.request.AccountChangePasswordRequest;
 import com.ably.pre_task.dto.response.AccountInfoResponse;
 import com.ably.pre_task.service.AccountService;
 import com.ably.pre_task.util.LoginUserId;
@@ -12,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
@@ -33,6 +35,13 @@ public class AccountController {
         AccountInfoResponse response = accountService.myInfo(accountId);
 
         return ResponseEntity.ok(response);
+    }
+
+    @PutMapping("/change-password")
+    public ResponseEntity<Void> changePassword(AccountChangePasswordRequest request) {
+        accountService.changePassword(request);
+
+        return ResponseEntity.noContent().build();
     }
 
 }
