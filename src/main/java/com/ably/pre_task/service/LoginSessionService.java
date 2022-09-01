@@ -4,8 +4,8 @@ import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
 @Service
+@RequiredArgsConstructor
 public class LoginSessionService implements LoginService {
 
     public static final String ACCOUNT_USER_ID = "ACCOUNT_USER_ID";

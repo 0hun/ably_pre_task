@@ -5,7 +5,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.catchThrowable;
 
 import com.ably.pre_task.domain.Account;
 import com.ably.pre_task.dto.request.AccountAddRequest;
-import com.ably.pre_task.exception.UserNotFoundException;
+import com.ably.pre_task.exception.AccountNotFoundException;
 import org.hibernate.exception.ConstraintViolationException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -38,7 +38,7 @@ public class AccountRepositoryTest {
         accountRepository.save(account);
 
         Account savedAccount = accountRepository.findByEmailAndPassword(request.getEmail(), request.getPassword())
-                .orElseThrow(() -> UserNotFoundException.exception);
+                .orElseThrow(() -> AccountNotFoundException.exception);
 
         //then
         assertThat(savedAccount.getEmail()).isEqualTo(request.getEmail());
@@ -76,11 +76,11 @@ public class AccountRepositoryTest {
         // when
         Throwable thrown = catchThrowable(() -> {
             accountRepository.findByEmailAndPassword(email, password)
-                    .orElseThrow(() -> UserNotFoundException.exception);
+                    .orElseThrow(() -> AccountNotFoundException.exception);
         });
 
         //then
-        assertThat(thrown).isInstanceOf(UserNotFoundException.class);
+        assertThat(thrown).isInstanceOf(AccountNotFoundException.class);
     }
 
     @DisplayName("account 객체 비밀번호 변경 테스트")
@@ -100,7 +100,7 @@ public class AccountRepositoryTest {
         accountRepository.save(account);
 
         Account savedAccount = accountRepository.findByEmailAndPassword(request.getEmail(), request.getPassword())
-                .orElseThrow(() -> UserNotFoundException.exception);
+                .orElseThrow(() -> AccountNotFoundException.exception);
 
         //when
         final String newPassword = "xzxczxcsa1234@";

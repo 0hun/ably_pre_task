@@ -52,4 +52,14 @@ public class AccountAddRequest {
                 .name(this.name)
                 .build();
     }
+
+    public Account passwordEncodeCopyAccount(String encodePassword) {
+        return Account.builder()
+                .email(this.email)
+                .nickname(this.nickname)
+                .password(encodePassword)
+                .phone(this.phone)
+                .name(this.name)
+                .build();
+    }
 }
