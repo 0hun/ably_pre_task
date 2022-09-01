@@ -31,7 +31,7 @@ public class LoginServiceTest {
         doNothing().when(httpSession).setAttribute(ACCOUNT_USER_ID, accountId);
 
         //when
-        loginSessionService.accountLogin(accountId);
+        loginSessionService.accountLogin(httpSession, accountId);
 
         //then
         verify(httpSession).setAttribute(ACCOUNT_USER_ID, accountId);
@@ -46,7 +46,7 @@ public class LoginServiceTest {
         httpSession.setAttribute(ACCOUNT_USER_ID, accountId);
 
         //when
-        loginSessionService.accountLogout();
+        loginSessionService.accountLogout(httpSession);
 
         //then
         verify(httpSession).removeAttribute(ACCOUNT_USER_ID);

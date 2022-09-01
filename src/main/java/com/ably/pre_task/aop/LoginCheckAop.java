@@ -3,7 +3,6 @@ package com.ably.pre_task.aop;
 import com.ably.pre_task.service.LoginService;
 import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
-import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.http.HttpStatus;
@@ -27,7 +26,7 @@ public class LoginCheckAop {
      * @throws HttpClientErrorException
      */
     @Before("@annotation(LoginCheck) && @annotation(loginCheck)")
-    public void loginCheck(ProceedingJoinPoint proceedingJoinPoint, LoginCheck loginCheck) throws HttpClientErrorException {
+    public void loginCheck(LoginCheck loginCheck) throws HttpClientErrorException {
         HttpSession session = ((ServletRequestAttributes) (RequestContextHolder.currentRequestAttributes())).getRequest().getSession();
 
         userLoginCheck(session);

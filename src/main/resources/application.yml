@@ -31,11 +31,6 @@ spring:
   batch:
     jdbc:
       initialize-schema: always
-  session :
-    storage-type : redis
-  redis :
-    host : localhost
-      port : 6379
 logging:
   level:
     org.hibernate.SQL: debug
