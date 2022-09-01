@@ -1,4 +1,4 @@
-package com.ably.pre_task.account.exception;
+package com.ably.pre_task.exception;
 
 public class UserNotFoundException extends RuntimeException {
 

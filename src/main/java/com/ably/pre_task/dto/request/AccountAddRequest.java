@@ -1,6 +1,6 @@
-package com.ably.pre_task.account.dto.request;
+package com.ably.pre_task.dto.request;
 
-import com.ably.pre_task.account.domain.Account;
+import com.ably.pre_task.domain.Account;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;

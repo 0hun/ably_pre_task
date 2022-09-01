@@ -1,6 +1,6 @@
-package com.ably.pre_task.account.repository;
+package com.ably.pre_task.repository;
 
-import com.ably.pre_task.account.domain.Account;
+import com.ably.pre_task.domain.Account;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,8 +1,8 @@
-package com.ably.pre_task.account.domain;
+package com.ably.pre_task.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import com.ably.pre_task.account.dto.request.AccountAddRequest;
+import com.ably.pre_task.dto.request.AccountAddRequest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

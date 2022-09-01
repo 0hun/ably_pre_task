@@ -1,4 +1,4 @@
-package com.ably.pre_task.account.domain;
+package com.ably.pre_task.domain;
 
 
 import javax.persistence.Column;

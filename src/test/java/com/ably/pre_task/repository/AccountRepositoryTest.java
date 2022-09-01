@@ -1,11 +1,11 @@
-package com.ably.pre_task.account.repository;
+package com.ably.pre_task.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.catchThrowable;
 
-import com.ably.pre_task.account.domain.Account;
-import com.ably.pre_task.account.dto.request.AccountAddRequest;
-import com.ably.pre_task.account.exception.UserNotFoundException;
+import com.ably.pre_task.domain.Account;
+import com.ably.pre_task.dto.request.AccountAddRequest;
+import com.ably.pre_task.exception.UserNotFoundException;
 import org.hibernate.exception.ConstraintViolationException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
